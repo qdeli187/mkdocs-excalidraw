@@ -1,0 +1,25 @@
+[project]
+name = "mkdocs-excalidraw"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "qdeli",email = "68959159+QuentinDelignon@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs (>=1.6.1,<2.0.0)",
+    "beautifulsoup4 (>=4.13.5,<5.0.0)"
+]
+
+[tool.poetry.plugins."mkdocs.plugins"]
+excalidraw = "mkdocs_excalidraw.plugin:ExcalidrawPlugin"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.18"
+
