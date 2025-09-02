@@ -1,6 +1,6 @@
 from mkdocs.structure.files import File , Files, InclusionLevel
 from mkdocs_excalidraw.plugin import ExcalidrawPlugin
-from mkdocs.config import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 def test_download_uri():
     plugin = ExcalidrawPlugin()
@@ -15,17 +15,35 @@ def test_load_file():
 def test_on_files():
     plugin = ExcalidrawPlugin()
     files = Files(files=[])
-    plugin.on_files(files,config=Config())
+    cfg = MkDocsConfig("../mkdocs.yml")
+    plugin.on_files(files,config=cfg)
 
-def test_on_page_content_repl():
+def test_on_post_page_repl():
     plugin = ExcalidrawPlugin()
     html = '<div><img src="/test/test.excalidraw"/></div>'
-    expected= '<div><excalidraw-renderer src="/test/test.excalidraw"/></div>'
-    res = plugin.on_page_content(html,page=None,config=None,files=None)
-    assert res == expected
+    expected= '<excalidraw-renderer src="/test/test.excalidraw"/>'
+    res = plugin.on_post_page(html,page=None,config=None)
+    assert expected in res # type: ignore
 
-def test_on_page_content_non_repl():
+def test_on_post_page_non_repl():
     plugin = ExcalidrawPlugin()
     html = '<div><img src="/test/test.png"/></div>'
-    res = plugin.on_page_content(html,page=None,config=None,files=None)
+    res = plugin.on_post_page(html,page=None,config=None)
     assert res == html
+
+def test_e2e():
+    from mkdocs.commands import serve
+    from mkdocs.config import load_config
+    import os
+
+    # Load MkDocs configuration
+    config_file = '../mkdocs.yml'  # or path to your config file
+    
+    if not os.path.exists(config_file):
+        print(f"Config file {config_file} not found")
+        return
+        
+    config = load_config(config_file=config_file)
+    
+    # Start the development server
+    serve.serve(config, host='127.0.0.1', port=8000, livereload=True)

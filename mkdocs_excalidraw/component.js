@@ -6,7 +6,7 @@ class ExcalidrawRenderer extends HTMLElement {
             .then(res => res.json())
             .then(data => exportToSvg(data))
             .then(res => {
-                this.innerHTML = `<div></div>`
+                this.innerHTML = `<div style="display:flex;flex-direction: column;align-items: center;"></div>`
                 const div = this.querySelector('div');
                 div.appendChild(res);
             })

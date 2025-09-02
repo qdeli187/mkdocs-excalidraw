@@ -3,3 +3,4 @@ plugins:
   - excalidraw
 theme:
   name: material
+  #color_mode: dark
