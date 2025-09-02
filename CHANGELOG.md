@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/QuentinDelignon/mkdocs-excalidraw/compare/v0.2.0...v0.2.1) (2025-09-02)
+
+
+### Bug Fixes
+
+* **ci:** fix ci ([5a39000](https://github.com/QuentinDelignon/mkdocs-excalidraw/commit/5a39000c43d745cef3a928bfec7cd514caf4a12a))
+
 ## [0.2.0](https://github.com/QuentinDelignon/mkdocs-excalidraw/compare/v0.1.0...v0.2.0) (2025-09-02)
 
 
