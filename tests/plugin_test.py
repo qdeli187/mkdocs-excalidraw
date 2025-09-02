@@ -1,6 +1,4 @@
-from mkdocs.structure.files import File , Files, InclusionLevel
 from mkdocs_excalidraw.plugin import ExcalidrawPlugin
-from mkdocs.config.defaults import MkDocsConfig
 
 def test_download_uri():
     plugin = ExcalidrawPlugin()
