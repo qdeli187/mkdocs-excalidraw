@@ -1,19 +1,30 @@
-# Welcome to MkDocs
+# Mkdocs Excalidraw
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+✨ A simple mkdocs plugin to easily embed your excalidraw drawings into your docs
 
-## Commands
+## Features
+- Embed your drawings as you would an image by converting your excalidraw drawings to svg on the fly
+- Dark mode compatibility for **mkdocs** and **mkdocs-material** themes
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Usage
+You can use this documentation as an example , lets break down how we do it.
 
-## Project layout
+1. Create an excalidraw drawing and save the file (i recommend using the vscode extension)
+2. Add a reference to it in your markdown file as an image
+```markdown
+![fig_name](drawings/test.excalidraw)
+```
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Example
 
-![test](drawings/test.excalidraw)
+![fig_name](drawings/test.excalidraw)
+
+## Issues
+
+As you can see above there are two issues with the current implementations:
+
+- The font is not correct
+- Text is not properly aligned
+
+Both these issues have been noticed by excalidraw creators and should be fixed in the next release. I will
+update this plugin with the new version when it will come out.

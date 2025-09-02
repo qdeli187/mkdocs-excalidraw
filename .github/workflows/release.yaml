@@ -1,0 +1,55 @@
+name: branches
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: read
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.release.outputs.tag_name}}
+      release_created: ${{ steps.release.outputs.release_created}}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  build:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    steps:
+      - name: 🤖 Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - name: ✨ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: 🧰 Install Poetry
+        run: pip install poetry
+      - name: 📦 Install dependencies
+        run: poetry install --no-root --with dev --with docs
+      - name: 🧪 Run tests
+        run: poetry run pytest
+      - name: 🖼️ Build docs
+        run: mkdocs gh-deploy --force
+      - name: 📦 Publish package
+        run: |
+          poetry config pypi-token.pypi ${secrets.PYPI_API_TOKEN}
+          poetry publish --build -V ${needs.release-please.outputs.tag_name}
+      

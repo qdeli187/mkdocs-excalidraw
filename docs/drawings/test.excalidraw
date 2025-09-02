@@ -4,12 +4,86 @@
   "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
   "elements": [
     {
-      "id": "QKDTnOkPkQFTtqUJhlJpg",
+      "id": "xbzl-7v1ZrxRMFyTOMvyw",
+      "type": "text",
+      "x": 397.6770511324672,
+      "y": 703.7577348345594,
+      "width": 340.4797668457031,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aB",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 470072823,
+      "version": 92,
+      "versionNonce": 1972049817,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1756801168240,
+      "link": null,
+      "locked": false,
+      "text": "Here is some excalidraw in mkdocs !",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Here is some excalidraw in mkdocs !",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "Jfcc8Vr0IzybD8jbidknO",
       "type": "rectangle",
-      "x": 402.99005126953125,
-      "y": 158.4422607421875,
-      "width": 201.9156494140625,
-      "height": 37.99375915527344,
+      "x": 437.6770511324672,
+      "y": 747.7577348345594,
+      "width": 252,
+      "height": 53,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aC",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 382199575,
+      "version": 77,
+      "versionNonce": 1740415095,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "V--2rNCM32bDsD9h2vy6P"
+        }
+      ],
+      "updated": 1756801896157,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "V--2rNCM32bDsD9h2vy6P",
+      "type": "text",
+      "x": 537.3670688326625,
+      "y": 761.7577348345594,
+      "width": 52.619964599609375,
+      "height": 25,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "#a5d8ff",
@@ -20,116 +94,62 @@
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
-      "index": "a0",
-      "roundness": {
-        "type": 3
-      },
-      "seed": 337398898,
-      "version": 15,
-      "versionNonce": 249676718,
+      "index": "aD",
+      "roundness": null,
+      "seed": 690056737,
+      "version": 50,
+      "versionNonce": 375355799,
       "isDeleted": false,
-      "boundElements": [
-        {
-          "id": "kYh06FrTVWC4eVWP2YMgb",
-          "type": "arrow"
-        }
-      ],
-      "updated": 1756670614355,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "LnvgvkFM8PWDQpCsI6Anz",
-      "type": "rectangle",
-      "x": 577.3291625976562,
-      "y": 224.6316680908203,
-      "width": 245.01007080078125,
-      "height": 45.67887878417969,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "#ffc9c9",
-      "fillStyle": "hachure",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a1",
-      "roundness": {
-        "type": 3
-      },
-      "seed": 1525095474,
-      "version": 18,
-      "versionNonce": 46870574,
-      "isDeleted": false,
-      "boundElements": [
-        {
-          "id": "kYh06FrTVWC4eVWP2YMgb",
-          "type": "arrow"
-        }
-      ],
-      "updated": 1756670614357,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "kYh06FrTVWC4eVWP2YMgb",
-      "type": "arrow",
-      "x": 607.96435546875,
-      "y": 170.35690307617188,
-      "width": 118.525390625,
-      "height": 48.32145690917969,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "#ffc9c9",
-      "fillStyle": "hachure",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a2",
-      "roundness": {
-        "type": 2
-      },
-      "seed": 248964530,
-      "version": 151,
-      "versionNonce": 1390717810,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1756670614375,
+      "boundElements": [],
+      "updated": 1756801896157,
       "link": null,
       "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          109.466552734375,
-          1.4185333251953125
-        ],
-        [
-          118.525390625,
-          48.32145690917969
-        ]
-      ],
-      "lastCommittedPoint": null,
-      "startBinding": {
-        "elementId": "QKDTnOkPkQFTtqUJhlJpg",
-        "focus": -0.4151727292362587,
-        "gap": 3.05865478515625
-      },
-      "endBinding": {
-        "elementId": "LnvgvkFM8PWDQpCsI6Anz",
-        "focus": 0.2538412869193137,
-        "gap": 5.95330810546875
-      },
-      "startArrowhead": null,
-      "endArrowhead": "arrow",
-      "elbowed": false
+      "text": "Nice !",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "Jfcc8Vr0IzybD8jbidknO",
+      "originalText": "Nice !",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "9M5tHnsxQr3cW35Kfs7_A",
+      "type": "text",
+      "x": 361.9169345553188,
+      "y": 831.7577348345594,
+      "width": 428.69970703125,
+      "height": 50,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aE",
+      "roundness": null,
+      "seed": 1907720697,
+      "version": 122,
+      "versionNonce": 1511130647,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1756801933596,
+      "link": null,
+      "locked": false,
+      "text": "Try swithching between light and dark mode\nwith the button in the top right",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Try swithching between light and dark mode\nwith the button in the top right",
+      "autoResize": true,
+      "lineHeight": 1.25
     }
   ],
   "appState": {

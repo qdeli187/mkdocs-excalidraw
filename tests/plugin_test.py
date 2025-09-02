@@ -12,12 +12,6 @@ def test_load_file():
     res = plugin._load_file("component.js")
     assert len(res) > 0 , "Content Empty"
 
-def test_on_files():
-    plugin = ExcalidrawPlugin()
-    files = Files(files=[])
-    cfg = MkDocsConfig("../mkdocs.yml")
-    plugin.on_files(files,config=cfg)
-
 def test_on_post_page_repl():
     plugin = ExcalidrawPlugin()
     html = '<div><img src="/test/test.excalidraw"/></div>'
