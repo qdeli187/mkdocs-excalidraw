@@ -2,8 +2,9 @@ name: branches
 
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - fix/*
+      - feat/*
 
 permissions:
   contents: read
