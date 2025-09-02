@@ -15,14 +15,14 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - name: 🤖 Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: ✨ Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: 🤖 Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: 🐍 Setup Python
         uses: actions/setup-python@v4
         with:
