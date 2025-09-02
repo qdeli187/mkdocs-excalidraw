@@ -1,4 +1,6 @@
-site_name: My Docs
+site_name: MkDocs Excalidraw
+site_url: https://qdelignon.github.io/mkdocs-excalidraw/
+site_description: A MkDocs plugin to embed Excalidraw drawings.
 plugins:
   - excalidraw
 theme:
