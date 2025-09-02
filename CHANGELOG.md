@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.3.0...v0.3.1) (2025-09-02)
+
+
+### Bug Fixes
+
+* update ci ([73b6b63](https://github.com/qdeli187/mkdocs-excalidraw/commit/73b6b63b73f70050693a3de68b389a7b941229ff))
+
 ## [0.3.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.2.1...v0.3.0) (2025-09-02)
 
 
