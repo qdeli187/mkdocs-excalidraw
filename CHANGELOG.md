@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.3.2...v0.3.3) (2025-09-03)
+
+
+### Bug Fixes
+
+* fix fonts and placements ([#8](https://github.com/qdeli187/mkdocs-excalidraw/issues/8)) ([118fc35](https://github.com/qdeli187/mkdocs-excalidraw/commit/118fc35f1d9e6fc4b50e2ee34e9b75fa6153643a))
+
 ## [0.3.2](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.3.1...v0.3.2) (2025-09-02)
 
 
