@@ -1,4 +1,7 @@
-const { exportToSvg } = ExcalidrawUtils;
+window.EXCALIDRAW_ASSET_PATH =
+  "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/prod/";
+import { exportToSvg } from "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/dev/index.js";
+
 class ExcalidrawRenderer extends HTMLElement {
   constructor() {
     super();
@@ -17,7 +20,7 @@ class ExcalidrawRenderer extends HTMLElement {
       const isLightTheme =
         body.getAttribute("data-md-color-media") ===
         "(prefers-color-scheme: light)";
-      this.mode = isLightTheme ? "dark" : "light";
+      this.mode = isLightTheme ? "light" : "dark";
       this.observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (mutation.attributeName === "data-md-color-media") {

@@ -7,7 +7,7 @@ from mkdocs.structure.pages import Page
 import requests as r
 
 EXCALIDRAW_CSS = "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/dev/index.css"
-EXCALIDRAW_JS = "https://unpkg.com/@excalidraw/utils@0.1.2/dist/excalidraw-utils.min.js"
+EXCALIDRAW_JS = "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/dev/index.js"
 
 class ExcalidrawPlugin(BasePlugin):
 
@@ -48,6 +48,7 @@ class ExcalidrawPlugin(BasePlugin):
             css_tag["rel"] = "stylesheet"
             css_tag["href"] = EXCALIDRAW_CSS
             comp_js = soup.new_tag('script')
+            comp_js['type'] = "module"
             comp_js.string = self.comp
             if soup.head is not None:
                 soup.head.extend([js_tag,css_tag,comp_js])
