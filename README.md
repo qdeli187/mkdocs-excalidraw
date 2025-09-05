@@ -22,13 +22,3 @@ You can use this project's [docs](https://qdeli187.github.io/mkdocs-excalidraw/)
 ![fig_name](drawings/test.excalidraw)
 ```
 3. Thats it , the extension renders it as an svg in your browser
-
-## Issues
-
-As you can see [here](https://qdeli187.github.io/mkdocs-excalidraw/) are two issues with the current implementations:
-
-- The font is not correct
-- Text is not properly aligned
-
-Both these issues have been noticed by excalidraw creators and should be fixed in the next release. I will
-update this plugin with the new version when it will come out.
