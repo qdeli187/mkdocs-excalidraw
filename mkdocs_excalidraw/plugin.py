@@ -15,12 +15,6 @@ class ExcalidrawPlugin(BasePlugin):
         self.comp = self._load_file('component.js')
         super().__init__()
 
-    def _download_uri(self, uri : str) -> str:
-        """Downloads remote text content"""
-        res = r.get(uri)
-        res.raise_for_status()
-        return res.text
-
     def _load_file(self, path : str):
         """load local text content from this pkg"""
         fp = os.path.join(
@@ -32,27 +26,27 @@ class ExcalidrawPlugin(BasePlugin):
         return res
     
     def on_post_page(self, output: str, /, *, page: Page, config: MkDocsConfig) -> str | None:
-        if "excalidraw" not in output:
-            return output
         soup = BeautifulSoup(output, 'html.parser')
-        altered = False
+        js_tag = soup.new_tag('script')
+        js_tag['src'] = EXCALIDRAW_JS
+        css_tag = soup.new_tag('link')
+        css_tag["rel"] = "stylesheet"
+        css_tag["href"] = EXCALIDRAW_CSS
+        comp_js = soup.new_tag('script')
+        comp_js['type'] = "module"
+        comp_js.string = self.comp
+        if soup.head is not None:
+            soup.head.extend([js_tag,css_tag,comp_js])
+        else:
+            soup.extend([js_tag,css_tag,comp_js])
+
+        return str(soup)
+    
+    def on_page_content(self, html : str, page : Page, config : MkDocsConfig, **kwargs):
+        if ".excalidraw" not in html:
+            return html
+        soup = BeautifulSoup(html, 'html.parser')
         for t in soup.find_all("img"):
             if t["src"].endswith(".excalidraw"):
-                altered = True
                 t.name = "excalidraw-renderer"
-        if altered:
-            # load js , css
-            js_tag = soup.new_tag('script')
-            js_tag['src'] = EXCALIDRAW_JS
-            css_tag = soup.new_tag('link')
-            css_tag["rel"] = "stylesheet"
-            css_tag["href"] = EXCALIDRAW_CSS
-            comp_js = soup.new_tag('script')
-            comp_js['type'] = "module"
-            comp_js.string = self.comp
-            if soup.head is not None:
-                soup.head.extend([js_tag,css_tag,comp_js])
-            else:
-                soup.extend([js_tag,css_tag,comp_js])
-
         return str(soup)
