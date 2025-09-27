@@ -1,26 +1,21 @@
 from mkdocs_excalidraw.plugin import ExcalidrawPlugin
 
-def test_download_uri():
-    plugin = ExcalidrawPlugin()
-    res = plugin._download_uri('https://google.com')
-    assert len(res) > 0 , "Content Empty"
-
 def test_load_file():
     plugin = ExcalidrawPlugin()
     res = plugin._load_file("component.js")
     assert len(res) > 0 , "Content Empty"
 
-def test_on_post_page_repl():
+def test_on_page_content_repl():
     plugin = ExcalidrawPlugin()
     html = '<div><img src="/test/test.excalidraw"/></div>'
     expected= '<excalidraw-renderer src="/test/test.excalidraw"/>'
-    res = plugin.on_post_page(html,page=None,config=None)
+    res = plugin.on_page_content(html,page=None,config=None)
     assert expected in res # type: ignore
 
-def test_on_post_page_non_repl():
+def test_on_page_content_non_repl():
     plugin = ExcalidrawPlugin()
     html = '<div><img src="/test/test.png"/></div>'
-    res = plugin.on_post_page(html,page=None,config=None)
+    res = plugin.on_page_content(html,page=None,config=None)
     assert res == html
 
 def test_e2e():
