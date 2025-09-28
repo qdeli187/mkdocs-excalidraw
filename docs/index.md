@@ -2,7 +2,6 @@
 
 ✨ A simple mkdocs plugin to easily embed your excalidraw drawings into your docs
 
-![excalidraw](assets/excalidraw.jpg)
 
 ## Features
 - Embed your drawings as you would an image by converting your excalidraw drawings to svg on the fly
@@ -24,3 +23,7 @@ Simply install and setup **mkdocs-glightbox** as descibed [here]()
 ## Example
 
 ![fig_name](drawings/test.excalidraw)
+
+Bigger Drawing (better use mkdocs-glightbox to get a closer view)
+
+![biggie](drawings/big.excalidraw)

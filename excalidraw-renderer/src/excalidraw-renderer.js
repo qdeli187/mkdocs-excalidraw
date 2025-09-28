@@ -1,12 +1,12 @@
 window.EXCALIDRAW_ASSET_PATH =
   "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/prod/";
 
-import { exportToSvg } from "@excalidraw/excalidraw";
+import { exportToSvg, exportToBlob } from "@excalidraw/excalidraw";
 import { v4 as uuidv4 } from 'uuid';
 
 // Wrap everything in an IIFE to ensure execution
-(function() {
- console.log(customElements.get('excalidraw-renderer'));
+(function () {
+  console.log(customElements.get('excalidraw-renderer'));
   class ExcalidrawRenderer extends HTMLElement {
     constructor() {
       super();
@@ -29,20 +29,20 @@ import { v4 as uuidv4 } from 'uuid';
         this.observer = new MutationObserver((mutations) => {
           mutations.forEach((mutation) => {
             if (mutation.attributeName === "data-md-color-media") {
-              if (body.getAttribute("data-md-color-media") === "(prefers-color-scheme: dark)" ) {
-                  this.mode = "dark";
+              if (body.getAttribute("data-md-color-media") === "(prefers-color-scheme: dark)") {
+                this.mode = "dark";
               }
-              else if (body.getAttribute("data-md-color-media") === "(prefers-color-scheme: light)" ) {
-                  this.mode = "light";
+              else if (body.getAttribute("data-md-color-media") === "(prefers-color-scheme: light)") {
+                this.mode = "light";
               }
               else {
-                  this.mode = this.defaultColorTheme;
+                this.mode = this.defaultColorTheme;
               }
               this.connectedCallback();
             }
           });
         });
-        this.observer.observe(body, { attributes: true , attributeFilter: ['data-md-color-media']});
+        this.observer.observe(body, { attributes: true, attributeFilter: ['data-md-color-media'] });
       }
       if (this.theme == "mkdocs") {
         const doc = document.documentElement;
@@ -51,17 +51,17 @@ import { v4 as uuidv4 } from 'uuid';
         this.observer = new MutationObserver((mutations) => {
           mutations.forEach((mutation) => {
             if (mutation.attributeName === "data-bs-theme") {
-              if (doc.getAttribute("data-bs-theme") === "dark" ) {
-                  this.mode = "dark";
+              if (doc.getAttribute("data-bs-theme") === "dark") {
+                this.mode = "dark";
               }
-              else if (doc.getAttribute("data-bs-theme") === "light" ) {
-                  this.mode = "light";
+              else if (doc.getAttribute("data-bs-theme") === "light") {
+                this.mode = "light";
               }
               this.connectedCallback();
             }
           });
         });
-        this.observer.observe(document.documentElement, { attributes: true});
+        this.observer.observe(document.documentElement, { attributes: true });
       }
     }
 
@@ -72,24 +72,38 @@ import { v4 as uuidv4 } from 'uuid';
       return data;
     }
 
+    onclick(){
+      if (typeof lightbox !== 'undefined') {
+        const src = this.getAttribute("src");
+        const index = lightbox.elements.findIndex(e => e.instance.element.alt==src);
+        if (index > -1){
+          lightbox.openAt(index);
+        }
+      }
+    }
+
     connectedCallback() {
       const src = this.getAttribute("src");
-      const fname = src.split('/').pop().split('.').slice(0, -1).join('-');
       fetch(src)
         .then((res) => res.json())
-        .then((data) => exportToSvg(this.handleTheme(data)))
+        .then((data) => exportToBlob(this.handleTheme(data)))
         .then((res) => {
-          const uid = uuidv4();
-          this.innerHTML = `<a class="glightbox" data-type="inline" href="#${fname}" data-width="500" data-height="400"><div style="display:flex;flex-direction: column;align-items: center"></div></a>`;
-          const div = this.querySelector("div");
-          div.appendChild(res);
-          this.innerHTML = this.innerHTML + `<div id="${fname}" class="lb-clone" style="display:none"></div>`
-          const popup = this.querySelector(".lb-clone")
-          lightbox.insertSlide({
-              content: document.getElementById('inline-example'),
-              width: '90vw'
-          }, 2);
-          popup.appendChild(res);
+          var urlCreator = window.URL || window.webkitURL;
+          const lbAvailable = (typeof lightbox !== 'undefined');
+          var imageUrl = urlCreator.createObjectURL(res);
+          var style = "display: flex; justify-content: center;"
+          if (lbAvailable) style += "cursor: pointer;";
+          this.innerHTML = `<div style="${style}"><img src="${imageUrl}" /></div>`;
+          if (lbAvailable){
+            if (lightbox.elements.filter(e => e.instance.element.alt==src).length== 0){
+              lightbox.insertSlide({
+              'href': imageUrl,
+              'type': 'image',
+              'alt': src
+            })
+            this.addEventListener("click", this.onclick);
+            }
+          }
         })
         .catch((e) => {
           this.innerHTML = `<div style="display:flex;flex-direction: column;align-items: center;"><p>could not load diagram : ${e}</p></div>`;
