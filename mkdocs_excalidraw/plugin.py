@@ -1,6 +1,5 @@
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
-from mkdocs.structure.files import File , Files, InclusionLevel
 from bs4 import BeautifulSoup
 import os
 import shutil
@@ -11,16 +10,6 @@ class ExcalidrawPlugin(BasePlugin):
 
     def __init__(self) -> None:
         super().__init__()
-
-    def _load_file(self, path : str):
-        """load local text content from this pkg"""
-        fp = os.path.join(
-            os.path.dirname(__file__),
-            path
-        )
-        with open(fp,'r') as f:
-            res = f.read()
-        return res
     
     def on_post_page(self, output: str, /, *, page: Page, config: MkDocsConfig) -> str | None:
         # Only inject scripts on pages that contain excalidraw elements
