@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.3.3...v0.4.0) (2025-09-28)
+
+
+### Features
+
+* Add glightbox support and remove need of CDN ([#17](https://github.com/qdeli187/mkdocs-excalidraw/issues/17)) ([f9e2a6b](https://github.com/qdeli187/mkdocs-excalidraw/commit/f9e2a6b07be5f3435d1690d1dc1c5100512cacc9))
+
+
+### Bug Fixes
+
+* load js and css on the root of the page ([#14](https://github.com/qdeli187/mkdocs-excalidraw/issues/14)) ([09e3b17](https://github.com/qdeli187/mkdocs-excalidraw/commit/09e3b17a95b1f03b1798fcd8ad8497e39696a76b))
+
 ## [0.3.3](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.3.2...v0.3.3) (2025-09-03)
 
 
