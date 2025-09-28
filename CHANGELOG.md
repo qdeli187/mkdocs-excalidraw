@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.0...v0.4.1) (2025-09-28)
+
+
+### Bug Fixes
+
+* update readme and ci to include latest features ([#21](https://github.com/qdeli187/mkdocs-excalidraw/issues/21)) ([5574d82](https://github.com/qdeli187/mkdocs-excalidraw/commit/5574d829cbaf053f8fdcbe0d7f26dda028ba3736))
+
 ## [0.4.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.3.3...v0.4.0) (2025-09-28)
 
 
