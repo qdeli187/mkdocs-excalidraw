@@ -4,9 +4,9 @@
 <meta content="A MkDocs plugin to embed Excalidraw drawings." name="description">
 <link href="https://qdelignon.github.io/mkdocs-excalidraw/" rel="canonical">
 <link href="assets/images/favicon.png" rel="icon">
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator">
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator">
 <title>MkDocs Excalidraw</title>
-<link href="assets/stylesheets/main.7e37652d.min.css" rel="stylesheet">
+<link href="assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet">
 <link href="assets/stylesheets/palette.06af60db.min.css" rel="stylesheet">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet">
@@ -118,18 +118,29 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#installation">
+<span class="md-ellipsis">
+      Installation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#usage">
 <span class="md-ellipsis">
       Usage
     </span>
 </a>
-</li>
+<nav aria-label="Usage" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-lightbox">
+<a class="md-nav__link" href="#add-lightbox-click-to-open-fullscreen">
 <span class="md-ellipsis">
-      Add Lightbox
+      Add Lightbox (Click to open fullscreen)
     </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#example">
@@ -163,18 +174,29 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#installation">
+<span class="md-ellipsis">
+      Installation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#usage">
 <span class="md-ellipsis">
       Usage
     </span>
 </a>
-</li>
+<nav aria-label="Usage" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-lightbox">
+<a class="md-nav__link" href="#add-lightbox-click-to-open-fullscreen">
 <span class="md-ellipsis">
-      Add Lightbox
+      Add Lightbox (Click to open fullscreen)
     </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#example">
@@ -196,8 +218,18 @@
 <ul>
 <li>Embed your drawings as you would an image by converting your excalidraw drawings to svg on the fly</li>
 <li>Dark mode compatibility for <strong>mkdocs</strong> and <strong>mkdocs-material</strong> themes</li>
-<li>Compatible with <strong>mkdocs-glightbox</strong> (zoom on click)</li>
+<li>Lightbox support when used with <strong>mkdocs-glightbox</strong> (fullscreen on click)</li>
 </ul>
+<h2 id="installation">Installation</h2>
+<p>Install the package</p>
+<pre><code class="language-bash">pip install mkdocs-excalidraw
+</code></pre>
+<p>Add it to your <code>mkdocs.yaml</code></p>
+<pre><code class="language-yaml">site_name: MkDocs Excalidraw
+plugins:
+  - excalidraw
+  - glightbox # if you want lightbox (see below)
+</code></pre>
 <h2 id="usage">Usage</h2>
 <p>You can use this documentation as an example , lets break down how we do it.</p>
 <ol>
@@ -206,8 +238,8 @@
 </ol>
 <pre><code class="language-markdown">![fig_name](drawings/test.excalidraw)
 </code></pre>
-<h2 id="add-lightbox">Add Lightbox</h2>
-<p>Simply install and setup <strong>mkdocs-glightbox</strong> as descibed <a href="">here</a></p>
+<h3 id="add-lightbox-click-to-open-fullscreen">Add Lightbox (Click to open fullscreen)</h3>
+<p>Simply install and setup <strong>mkdocs-glightbox</strong> as descibed <a href="https://github.com/Blueswen/mkdocs-glightbox">here</a></p>
 <h2 id="example">Example</h2>
 <p><excalidraw-renderer alt="fig_name" src="drawings/test.excalidraw"></excalidraw-renderer></p>
 <p>Bigger Drawing (better use mkdocs-glightbox to get a closer view)</p>
@@ -236,7 +268,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+<script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
 
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
