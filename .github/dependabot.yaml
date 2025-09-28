@@ -2,6 +2,8 @@ version: 2
 updates:
 - package-ecosystem: pip
   directory: "/"
+  commit-message:
+    prefix: "fix(python dependencies): "
   schedule:
     interval: weekly
   groups:
@@ -10,6 +12,8 @@ updates:
         - "*"
 - package-ecosystem: github-actions
   directory: "/"
+  commit-message:
+    prefix: "fix(gha dependencies): "
   schedule:
     interval: weekly
   groups:
@@ -20,6 +24,8 @@ updates:
   directory: "/excalidraw-renderer"
   schedule:
     interval: "weekly"
+  commit-message:
+    prefix: "fix(js dependencies): "
   groups:
     javascript-packages:
       patterns:
