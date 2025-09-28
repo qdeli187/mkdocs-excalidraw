@@ -3,16 +3,13 @@ from mkdocs.plugins import BasePlugin
 from mkdocs.structure.files import File , Files, InclusionLevel
 from bs4 import BeautifulSoup
 import os
+import shutil
 from mkdocs.structure.pages import Page
-import requests as r
-
-EXCALIDRAW_CSS = "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/dev/index.css"
-EXCALIDRAW_JS = "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/dev/index.js"
+from mkdocs import utils
 
 class ExcalidrawPlugin(BasePlugin):
 
     def __init__(self) -> None:
-        self.comp = self._load_file('component.js')
         super().__init__()
 
     def _load_file(self, path : str):
@@ -26,20 +23,23 @@ class ExcalidrawPlugin(BasePlugin):
         return res
     
     def on_post_page(self, output: str, /, *, page: Page, config: MkDocsConfig) -> str | None:
+        # Only inject scripts on pages that contain excalidraw elements
+        if ".excalidraw" not in output:
+            return output
+            
         soup = BeautifulSoup(output, 'html.parser')
-        js_tag = soup.new_tag('script')
-        js_tag['src'] = EXCALIDRAW_JS
-        css_tag = soup.new_tag('link')
-        css_tag["rel"] = "stylesheet"
-        css_tag["href"] = EXCALIDRAW_CSS
-        comp_js = soup.new_tag('script')
-        comp_js['type'] = "module"
-        comp_js.string = self.comp
+        
+        # Create script tag that loads the bundled JavaScript
+        bundle_script = soup.new_tag('script')
+        bundle_script['type'] = 'text/javascript'
+        bundle_script['src'] = utils.get_relative_url(utils.normalize_url('/assets/excalidraw-renderer.bundle.js'), page.url)
+        
+        # Insert script into head
         if soup.head is not None:
-            soup.head.extend([js_tag,css_tag,comp_js])
+            soup.head.append(bundle_script)
         else:
-            soup.extend([js_tag,css_tag,comp_js])
-
+            soup.append(bundle_script)
+        
         return str(soup)
     
     def on_page_content(self, html : str, page : Page, config : MkDocsConfig, **kwargs):
@@ -50,3 +50,21 @@ class ExcalidrawPlugin(BasePlugin):
             if t["src"].endswith(".excalidraw"):
                 t.name = "excalidraw-renderer"
         return str(soup)
+    
+    def on_post_build(self, config: MkDocsConfig):
+        """Copy bundled assets to the site directory"""
+        try:
+            src_js = os.path.join(os.path.dirname(__file__), 'assets', 'excalidraw-renderer.bundle.js')
+            dest_js = os.path.join(config['site_dir'], 'assets', 'excalidraw-renderer.bundle.js')
+            
+            os.makedirs(os.path.dirname(dest_js), exist_ok=True)
+            shutil.copy2(src_js, dest_js)
+            
+            # Also copy source map if it exists
+            src_map = os.path.join(os.path.dirname(__file__), 'assets', 'excalidraw-renderer.bundle.js.map')
+            if os.path.exists(src_map):
+                dest_map = os.path.join(config['site_dir'], 'assets', 'excalidraw-renderer.bundle.js.map')
+                shutil.copy2(src_map, dest_map)
+                
+        except FileNotFoundError as e:
+            raise RuntimeError(f"Bundle file not found: {e}.")
