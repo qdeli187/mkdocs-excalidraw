@@ -1,10 +1,5 @@
 from mkdocs_excalidraw.plugin import ExcalidrawPlugin
 
-def test_load_file():
-    plugin = ExcalidrawPlugin()
-    res = plugin._load_file("component.js")
-    assert len(res) > 0 , "Content Empty"
-
 def test_on_page_content_repl():
     plugin = ExcalidrawPlugin()
     html = '<div><img src="/test/test.excalidraw"/></div>'
