@@ -29,7 +29,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.6.1"
-mkdocs-material = "^9.6.20"
+mkdocs-material = "^9.6.21"
 mkdocs-glightbox = "^0.5.1"
 
 
