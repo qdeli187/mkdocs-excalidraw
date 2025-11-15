@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.2](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.1...v0.4.2) (2025-11-15)
+
+
+### Bug Fixes
+
+* **js dependencies:** bump esbuild ([ffe208a](https://github.com/qdeli187/mkdocs-excalidraw/commit/ffe208aae1febcf576145ef6283f8dc0a74e3a27))
+* **js dependencies:** bump esbuild from 0.25.10 to 0.25.11 in /excalidraw-renderer in the javascript-packages group ([#26](https://github.com/qdeli187/mkdocs-excalidraw/issues/26)) ([ffe208a](https://github.com/qdeli187/mkdocs-excalidraw/commit/ffe208aae1febcf576145ef6283f8dc0a74e3a27))
+* **python dependencies:** bump the python-packages group across 1 directory with 4 updates ([#30](https://github.com/qdeli187/mkdocs-excalidraw/issues/30)) ([71d3128](https://github.com/qdeli187/mkdocs-excalidraw/commit/71d3128f5fddb4fbe44ceada69c8926d89f09ce4))
+
 ## [0.4.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.0...v0.4.1) (2025-09-28)
 
 
