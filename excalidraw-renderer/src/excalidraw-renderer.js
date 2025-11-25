@@ -1,8 +1,7 @@
 window.EXCALIDRAW_ASSET_PATH =
   "https://esm.sh/@excalidraw/excalidraw@0.18.0/dist/prod/";
 
-import { exportToSvg, exportToBlob } from "@excalidraw/excalidraw";
-import { v4 as uuidv4 } from 'uuid';
+import { exportToBlob } from "@excalidraw/excalidraw";
 
 // Wrap everything in an IIFE to ensure execution
 (function () {
@@ -95,14 +94,22 @@ import { v4 as uuidv4 } from 'uuid';
           if (lbAvailable) style += "cursor: pointer;";
           this.innerHTML = `<div style="${style}"><img src="${imageUrl}" /></div>`;
           if (lbAvailable){
-            if (lightbox.elements.filter(e => e.instance.element.alt==src).length== 0){
+            let index = lightbox.elements.findIndex(e => e.instance.element.alt==src);
+            if (index === -1){
               lightbox.insertSlide({
               'href': imageUrl,
               'type': 'image',
               'alt': src
             })
-            this.addEventListener("click", this.onclick);
+            } else {
+              lightbox.removeSlide(index);
+              lightbox.insertSlide({
+              'href': imageUrl,
+              'type': 'image',
+              'alt': src
+            },index)
             }
+            this.addEventListener("click", this.onclick);
           }
         })
         .catch((e) => {
