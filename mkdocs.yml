@@ -1,14 +1,20 @@
-site_name: MkDocs Excalidraw
+site_name: mkdocs-excalidraw
 site_url: https://qdelignon.github.io/mkdocs-excalidraw/
 site_description: A MkDocs plugin to embed Excalidraw drawings.
+repo_url: https://github.com/qdeli187/mkdocs-excalidraw
+repo_name: qdeli187/mkdocs-excalidraw
 plugins:
   - excalidraw
   - glightbox
 theme:
   name: material
+  icon:
+    logo: simple/excalidraw
+    repo: fontawesome/brands/github
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
+      primary: teal
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
@@ -16,8 +22,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
-
-
+      primary: teal
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -25,6 +30,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: teal
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
