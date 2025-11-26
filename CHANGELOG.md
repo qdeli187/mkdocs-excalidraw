@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.2](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.1...v0.4.2) (2025-11-26)
+
+
+### Bug Fixes
+
+* **gha dependencies:** bump actions/checkout from 5 to 6 in the github-actions group ([#33](https://github.com/qdeli187/mkdocs-excalidraw/issues/33)) ([308a14b](https://github.com/qdeli187/mkdocs-excalidraw/commit/308a14b4b7b16463b92f22dcf9120763f6b02352))
+* **gha dependencies:** bump actions/checkout in the github-actions group ([308a14b](https://github.com/qdeli187/mkdocs-excalidraw/commit/308a14b4b7b16463b92f22dcf9120763f6b02352))
+* **js dependencies:** bump esbuild ([a7f3dea](https://github.com/qdeli187/mkdocs-excalidraw/commit/a7f3dea6f0ccdede55fa3b379a0e812b8396059b))
+* **js dependencies:** bump esbuild ([ffe208a](https://github.com/qdeli187/mkdocs-excalidraw/commit/ffe208aae1febcf576145ef6283f8dc0a74e3a27))
+* **js dependencies:** bump esbuild from 0.25.10 to 0.25.11 in /excalidraw-renderer in the javascript-packages group ([#26](https://github.com/qdeli187/mkdocs-excalidraw/issues/26)) ([ffe208a](https://github.com/qdeli187/mkdocs-excalidraw/commit/ffe208aae1febcf576145ef6283f8dc0a74e3a27))
+* **js dependencies:** bump esbuild from 0.25.11 to 0.27.0 in /excalidraw-renderer in the javascript-packages group ([#35](https://github.com/qdeli187/mkdocs-excalidraw/issues/35)) ([a7f3dea](https://github.com/qdeli187/mkdocs-excalidraw/commit/a7f3dea6f0ccdede55fa3b379a0e812b8396059b))
+* **js:** handle theme change for fullscreen views (glightbox) ([#36](https://github.com/qdeli187/mkdocs-excalidraw/issues/36)) ([461583b](https://github.com/qdeli187/mkdocs-excalidraw/commit/461583b8468aa6505af7ff9cfdbe55d0a9c3608e))
+* **python dependencies:** bump the python-packages group across 1 directory with 4 updates ([#30](https://github.com/qdeli187/mkdocs-excalidraw/issues/30)) ([71d3128](https://github.com/qdeli187/mkdocs-excalidraw/commit/71d3128f5fddb4fbe44ceada69c8926d89f09ce4))
+* **python dependencies:** bump the python-packages group with 2 updates ([#34](https://github.com/qdeli187/mkdocs-excalidraw/issues/34)) ([504994f](https://github.com/qdeli187/mkdocs-excalidraw/commit/504994fd8612c2cd96e85936a8b3bb3b7d264d26))
+
 ## [0.4.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.0...v0.4.1) (2025-09-28)
 
 
