@@ -47,6 +47,7 @@ jobs:
         run: poetry install --with dev --with docs
       - name: 🧪 Run tests
         run: poetry run pytest
+      # TODO: add build step for js code
       - name: Build package
         run: poetry build
       - name: install package
