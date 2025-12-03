@@ -1,50 +1,109 @@
-
-
 class ThemeHandler {
-    constructor() {
+  _modeChangeCallbacks = [];
+  _mode;
 
-    }
+  constructor() {
+    this.detectTheme();
+    this.observer = new MutationObserver(this.handleMutations);
+    this.start();
+  }
+  detectTheme() {}
+  handleMutations(mutations) {}
+  start() {}
 
-    applyTheme(data) {
-      data.appState.exportWithDarkMode = this.mode == "dark";
-      data.exportPadding = 20;
-      data.appState.exportEmbedScene = true;
-      return data;
-    }
+  get mode() {
+    return this._mode;
+  }
 
-    detectTheme() {
+  set mode(value) {
+    if (this._mode !== value) {
+      this._mode = value;
+      this.notifyModeChange();
     }
+  }
+
+  onModeChange(callback) {
+    this._modeChangeCallbacks.push(callback);
+  }
+
+  notifyModeChange() {
+    this._modeChangeCallbacks.forEach(cb => cb(this._mode));
+  }
+
+  applyTheme(data) {
+    data.appState.exportWithDarkMode = this.mode == "dark";
+    data.exportPadding = 20;
+    data.appState.exportEmbedScene = true;
+    return data;
+  }
 }
 
 class MkdocsThemeHandler extends ThemeHandler {
-    constructor() {
-        super();
-        this.observer = new MutationObserver((mutations) => {
-    }
+  constructor() {
+    super();
+  }
 
-    detectTheme() {
-        let mode = document.documentElement.getAttribute("data-bs-theme");
-        this.mode = mode == "light" ? "light" : "dark";
-    }
+  handleMutations(mutations) {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === "data-bs-theme") {
+        this.detectTheme();
+      }
+    });
+  }
+
+  detectTheme() {
+    let mode = document.documentElement.getAttribute("data-bs-theme");
+    this.mode = mode == "light" ? "light" : "dark";
+  }
+
+  start() {
+    this.observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-bs-theme"],
+    });
+  }
 }
 
 class MaterialThemeHandler extends ThemeHandler {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
+
+  handleMutations(mutations) {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === "data-md-color-media") {
+        this.detectTheme();
+      }
+    });
+  }
+
+  detectTheme() {
+    let info = document.body.getAttribute("data-md-color-media");
+    let isLightTheme = info === "(prefers-color-scheme: light)";
+    this.mode = isLightTheme ? "light" : "dark";
+  }
+
+  start() {
+    this.observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["data-md-color-media"],
+    });
+  }
 }
 
 class GlobalTheme {
-    constructor() {
-        let attr = document.body.getAttribute("data-md-color-media");
-        if (attr) {
-            this.handler = new MaterialThemeHandler();
-        }
-        else {
-            this.handler = new MkdocsThemeHandler();
-        }
+  constructor() {
+    let attr = document.body.getAttribute("data-md-color-media");
+    if (attr) {
+      this.handler = new MaterialThemeHandler();
+    } else {
+      this.handler = new MkdocsThemeHandler();
     }
+  }
 
-    detectTheme() {
-    }
+  applyTheme(data){
+    return this.handler.applyTheme(data)
+  }
 }
+
+export default GlobalTheme;
