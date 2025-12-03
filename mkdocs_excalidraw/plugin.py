@@ -36,7 +36,7 @@ class ExcalidrawPlugin(BasePlugin):
             return html
         soup = BeautifulSoup(html, 'html.parser')
         for t in soup.find_all("img"):
-            if t["src"].endswith(".excalidraw"):
+            if ".excalidraw" in t["src"]:
                 t.name = "excalidraw-renderer"
         return str(soup)
     
