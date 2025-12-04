@@ -49,7 +49,7 @@ jobs:
         with:
           node-version: '24'
       - name: 📦 Install dependencies
-        run: npm install
+        run: make install
       - name: 🏗 Bundle JS
         run: make prod
       - name: 🐍 Setup Python
