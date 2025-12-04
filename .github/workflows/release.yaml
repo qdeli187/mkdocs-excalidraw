@@ -17,6 +17,14 @@ jobs:
       tag_name: ${{ steps.release.outputs.tag_name}}
       release_created: ${{ steps.release.outputs.release_created}}
     steps:
+      - name: ✨ Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: 🤖 Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: googleapis/release-please-action@v4
         id: release
         with:
@@ -37,6 +45,13 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: 📦 Install dependencies
+        run: npm install
+      - name: 🏗 Bundle JS
+        run: make prod
       - name: 🐍 Setup Python
         uses: actions/setup-python@v6
         with:

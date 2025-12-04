@@ -14,15 +14,18 @@ serve:
 
 # Clean build artifacts
 clean:
-	rm -rf ./excalidraw-renderer/dist
-
-# Development workflow: clean, build, copy assets, and serve
-dev: clean build copy-assets serve
+	rm -rf ./excalidraw-renderer/dist && rm -rf ./mkdocs_excalidraw/assets/*
 
 # Production build
-prod:
+build-prod:
 	cd ./excalidraw-renderer && npm run build:prod
 
 # Install dependencies
 install:
 	cd ./excalidraw-renderer && npm install
+
+# Development workflow: clean, build, copy assets, and serve
+dev: clean build copy-assets serve
+
+# CI workflow
+prod: clean build-prod copy-assets

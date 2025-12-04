@@ -24,6 +24,13 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: 📦 Install dependencies
+        run: npm install
+      - name: 🏗 Bundle JS
+        run: make prod
       - name: 🐍 Setup Python
         uses: actions/setup-python@v6
         with:
@@ -34,4 +41,6 @@ jobs:
         run: poetry install --with dev --with docs
       - name: 🧪 Run tests
         run: poetry run pytest
+      - name: Build package
+        run: poetry build
       
