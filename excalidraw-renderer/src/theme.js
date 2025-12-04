@@ -4,7 +4,7 @@ class ThemeHandler {
 
   constructor() {
     this.detectTheme();
-    this.observer = new MutationObserver(this.handleMutations);
+    this.observer = new MutationObserver(this.handleMutations.bind(this));
     this.start();
   }
   detectTheme() {}

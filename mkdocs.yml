@@ -4,6 +4,7 @@ site_description: A MkDocs plugin to embed Excalidraw drawings.
 plugins:
   - excalidraw
   - glightbox
+  - include-markdown # not required, we use it to embed the readme
 theme:
   name: material
   palette:

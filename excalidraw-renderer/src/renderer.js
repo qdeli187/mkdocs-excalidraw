@@ -6,7 +6,6 @@ class ExcalidrawRenderer extends HTMLElement {
   constructor() {
     super();
     this.theme = new GlobalTheme();
-    this.handleSrc();
     this.addEventListener("click", this.onclick);
     this.theme.handler.onModeChange((newMode) => this.connectedCallback());
   }
@@ -34,14 +33,15 @@ class ExcalidrawRenderer extends HTMLElement {
   }
 
   connectedCallback() {
+    this.handleSrc();
     fetch(this.path)
       .then((res) => res.json())
       .then((data) => filterDrawing(data, this.frame))
+      .then((data) => exportToBlob(this.theme.applyTheme(data)))
       .then((data) => {
-        data = exportToBlob(this.theme.applyTheme(data));
         let imageUrl = renderDrawing(data);
         var style = "display: flex; justify-content: center;";
-        style = handleLightbox(this.src, imageUrl);
+        style = handleLightbox(this.src, imageUrl, style);
         this.innerHTML = `<div style="${style}"><img src="${imageUrl}" /></div>`;
       })
       .catch((e) => {

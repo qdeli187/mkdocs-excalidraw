@@ -1,18 +1,18 @@
 function filterDrawing(data, frame_name) {
   if (frame_name == null || frame_name == null) return data;
   // find the frame object
-  frame_obj = data.elements.find((e) => e.name == frame_name);
+  let frame_obj = data.elements.find((e) => e.name == frame_name);
   if (frame_obj == undefined) {
     throw new Error(`Frame not found: ${frame_name}`);
   }
-  els = data.elements.filter((e) => e.frameId == frame_obj.id);
+  let els = data.elements.filter((e) => e.frameId == frame_obj.id);
   data.elements = els;
   return data;
 }
 
 function renderDrawing(data) {
   var urlCreator = window.URL || window.webkitURL;
-  var imageUrl = urlCreator.createObjectURL(res);
+  return urlCreator.createObjectURL(data);
 }
 
 function handleLightbox(src,imageUrl,style) {
