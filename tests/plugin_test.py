@@ -29,3 +29,8 @@ def test_e2e():
     
     # Start the development server
     serve.serve(config, host='127.0.0.1', port=8000, livereload=True)
+
+def test_js_present():
+    import os
+    js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'mkdocs_excalidraw', 'assets', 'excalidraw-renderer.bundle.js')
+    assert os.path.exists(js_path), "JavaScript bundle file is missing"
