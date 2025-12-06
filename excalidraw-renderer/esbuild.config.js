@@ -1,7 +1,7 @@
 const esbuild = require('esbuild');
 
 esbuild.build({
-  entryPoints: ['src/excalidraw-renderer.js'],
+  entryPoints: ['src/index.js'],
   bundle: true,
   outfile: 'dist/excalidraw-renderer.bundle.js',
   format: 'iife',
@@ -9,10 +9,7 @@ esbuild.build({
   platform: 'browser',
   target: 'es2020',
   minify: true,
-  sourcemap: true,
-  define: {
-    'process.env.NODE_ENV': '"production"'
-  },
+  sourcemap: process.env.NODE_ENV === 'development',
   loader: {
     '.css': 'text'
   }
