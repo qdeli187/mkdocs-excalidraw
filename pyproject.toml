@@ -18,7 +18,10 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/qdeli187/mkdocs-excalidraw"
+Documentation = "https://qdeli187.github.io/mkdocs-excalidraw/"
+Repository = "https://github.com/qdeli187/mkdocs-excalidraw"
 Issues = "https://github.com/qdeli187/mkdocs-excalidraw/issues"
+Changelog = "https://github.com/qdeli187/mkdocs-excalidraw/releases"
 
 [tool.poetry.plugins."mkdocs.plugins"]
 excalidraw = "mkdocs_excalidraw.plugin:ExcalidrawPlugin"
