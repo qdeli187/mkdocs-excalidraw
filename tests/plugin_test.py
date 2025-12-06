@@ -33,4 +33,5 @@ def test_e2e():
 def test_js_present():
     import os
     js_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'mkdocs_excalidraw', 'assets', 'excalidraw-renderer.bundle.js')
+    print("Checking for JS file at:", js_path)
     assert os.path.exists(js_path), "JavaScript bundle file is missing"
