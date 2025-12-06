@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-excalidraw"
-version = "0.4.2"
+version = "0.5.0"
 description = "Excalidraw drawings in mkdocs"
 authors = [
     {name = "qdeli"}
