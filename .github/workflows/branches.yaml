@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: ✨ Checkout
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
       - name: 🤖 Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
@@ -27,9 +25,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - name: 📦 Install dependencies
-        run: make install
-      - name: 🏗 Bundle JS
+      - name: 📦 Bundle JS
         run: make prod
       - name: 🐍 Setup Python
         uses: actions/setup-python@v6
@@ -37,10 +33,10 @@ jobs:
           python-version: '3.11'
       - name: 🧰 Install Poetry
         run: pip install poetry
-      - name: 📦 Install dependencies
+      - name: 📥 Install dependencies
         run: poetry install --with dev --with docs
       - name: 🧪 Run tests
         run: poetry run pytest
-      - name: Build package
+      - name: 🏗️ Build package
         run: poetry build
       

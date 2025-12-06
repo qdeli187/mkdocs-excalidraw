@@ -28,4 +28,4 @@ install:
 dev: clean build copy-assets serve
 
 # CI workflow
-prod: clean build-prod copy-assets
+prod: install clean build-prod copy-assets
