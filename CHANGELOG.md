@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.2...v0.5.0) (2025-12-06)
+
+
+### Features
+
+* handle excalidraw frames ([#41](https://github.com/qdeli187/mkdocs-excalidraw/issues/41)) ([f4d7356](https://github.com/qdeli187/mkdocs-excalidraw/commit/f4d73568901e48253d0f3e9f001a8a7d95d79835))
+
+
+### Bug Fixes
+
+* **python dependencies:** bump beautifulsoup4 ([d64483f](https://github.com/qdeli187/mkdocs-excalidraw/commit/d64483f44336a2dec56cd2968c16b37d3421d5e9))
+* **python dependencies:** bump beautifulsoup4 from 4.14.2 to 4.14.3 in the python-packages group ([#39](https://github.com/qdeli187/mkdocs-excalidraw/issues/39)) ([d64483f](https://github.com/qdeli187/mkdocs-excalidraw/commit/d64483f44336a2dec56cd2968c16b37d3421d5e9))
+
 ## [0.4.2](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.1...v0.4.2) (2025-11-26)
 
 
