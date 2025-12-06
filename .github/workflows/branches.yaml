@@ -28,7 +28,7 @@ jobs:
       - name: 📦 Bundle JS
         run: make prod
       - name: debug
-        run: echo ${pwd} && echo ${ls -l}
+        run: pwd | cat && find . -type -ls | cat
       - name: 🐍 Setup Python
         uses: actions/setup-python@v6
         with:
