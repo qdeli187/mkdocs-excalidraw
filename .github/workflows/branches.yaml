@@ -27,8 +27,6 @@ jobs:
           node-version: '24'
       - name: 📦 Bundle JS
         run: make prod
-      - name: debug
-        run: pwd | cat && find . -type f -ls | cat
       - name: 🐍 Setup Python
         uses: actions/setup-python@v6
         with:

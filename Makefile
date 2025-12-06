@@ -6,7 +6,7 @@ build:
 
 # Copy built assets to mkdocs_excalidraw/assets
 copy-assets:
-	cp ./excalidraw-renderer/dist/* ./mkdocs_excalidraw/assets
+	mkdir -p ./mkdocs_excalidraw/assets && cp ./excalidraw-renderer/dist/* ./mkdocs_excalidraw/assets/
 
 # Serve mkdocs on 0.0.0.0:8899
 serve:
