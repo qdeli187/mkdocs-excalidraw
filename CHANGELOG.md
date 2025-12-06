@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.5.0...v0.5.1) (2025-12-06)
+
+
+### Bug Fixes
+
+* update project links ([7cd8d59](https://github.com/qdeli187/mkdocs-excalidraw/commit/7cd8d59bc1ef47ac43221d8a340a677a13cc7ad1))
+
 ## [0.5.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.4.2...v0.5.0) (2025-12-06)
 
 
