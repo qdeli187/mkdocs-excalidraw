@@ -64,8 +64,6 @@ jobs:
       # TODO: add build step for js code
       - name: Build package
         run: poetry build
-      - name: install package
-        run: pip install dist/mkdocs_excalidraw-*.whl
       - name: 🖼️ Build docs
         run: poetry run mkdocs gh-deploy --force
       - name: 📦 Publish package
