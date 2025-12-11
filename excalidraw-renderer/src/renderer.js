@@ -1,4 +1,4 @@
-import { exportToBlob } from "@excalidraw/excalidraw";
+import { exportToBlob } from "@excalidraw/utils";
 import GlobalTheme from "./theme";
 import { filterDrawing, renderDrawing, handleLightbox } from "./utils";
 
