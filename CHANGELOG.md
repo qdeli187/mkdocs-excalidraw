@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.0...v0.6.1) (2025-12-17)
+
+
+### Bug Fixes
+
+* do not render frames ([8c3a4a1](https://github.com/qdeli187/mkdocs-excalidraw/commit/8c3a4a1639a5c32cb57dfe7390e30fa369ca2304))
+
 ## [0.6.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.5.1...v0.6.0) (2025-12-11)
 
 
