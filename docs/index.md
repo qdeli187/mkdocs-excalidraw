@@ -12,7 +12,7 @@ Bigger Drawing (better make use mkdocs-glightbox by clicking on it)
 
 ![biggie](drawings/big.excalidraw)
 
-Partial rendering with frames (first is full drawing , second is the frame)
+Partial rendering with frames (first is full drawing , second is just the selected frame)
 
 ![frame_full](drawings/frame.excalidraw)
 

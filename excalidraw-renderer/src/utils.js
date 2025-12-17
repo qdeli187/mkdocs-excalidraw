@@ -1,5 +1,9 @@
 function filterDrawing(data, frame_name) {
-  if (frame_name == null || frame_name == null) return data;
+  if (frame_name == null || frame_name == null) {
+    let els = data.elements.filter((e) => e.type != "frame");
+    data.elements = els;
+    return data;
+  }
   // find the frame object
   let frame_obj = data.elements.find((e) => e.name == frame_name);
   if (frame_obj == undefined) {
