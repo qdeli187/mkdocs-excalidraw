@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.0...v0.6.1) (2026-01-20)
+
+
+### Bug Fixes
+
+* do not render frames ([8c3a4a1](https://github.com/qdeli187/mkdocs-excalidraw/commit/8c3a4a1639a5c32cb57dfe7390e30fa369ca2304))
+* **js dependencies:** bump esbuild ([7fe2b63](https://github.com/qdeli187/mkdocs-excalidraw/commit/7fe2b63cc702e6d7273e092a820dacdc67649051))
+* **js dependencies:** bump esbuild from 0.27.1 to 0.27.2 in /excalidraw-renderer in the javascript-packages group ([#53](https://github.com/qdeli187/mkdocs-excalidraw/issues/53)) ([7fe2b63](https://github.com/qdeli187/mkdocs-excalidraw/commit/7fe2b63cc702e6d7273e092a820dacdc67649051))
+* **python dependencies:** bump mkdocs-material ([a0ee940](https://github.com/qdeli187/mkdocs-excalidraw/commit/a0ee94061163312399cccf5fb670d97b77a7cc3c))
+* **python dependencies:** bump mkdocs-material from 9.7.0 to 9.7.1 in the python-packages group ([#54](https://github.com/qdeli187/mkdocs-excalidraw/issues/54)) ([a0ee940](https://github.com/qdeli187/mkdocs-excalidraw/commit/a0ee94061163312399cccf5fb670d97b77a7cc3c))
+
 ## [0.6.0](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.5.1...v0.6.0) (2025-12-11)
 
 
