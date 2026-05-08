@@ -10,7 +10,7 @@ copy-assets:
 
 # Serve mkdocs on 0.0.0.0:8899
 serve:
-	mkdocs serve -a 0.0.0.0:8899
+	uv run mkdocs serve -a 0.0.0.0:8899
 
 # Clean build artifacts
 clean:

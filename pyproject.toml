@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "mkdocs-excalidraw"
 version = "0.6.1"
@@ -16,12 +20,6 @@ dependencies = [
     "beautifulsoup4 (>=4.13.5,<5.0.0)"
 ]
 
-[tool.poetry]
-include = [
-    { path = "mkdocs_excalidraw/assets/excalidraw-renderer.bundle.js", format = ["sdist", "wheel"] }
-]
-
-
 [project.urls]
 Homepage = "https://github.com/qdeli187/mkdocs-excalidraw"
 Documentation = "https://qdeli187.github.io/mkdocs-excalidraw/"
@@ -29,21 +27,24 @@ Repository = "https://github.com/qdeli187/mkdocs-excalidraw"
 Issues = "https://github.com/qdeli187/mkdocs-excalidraw/issues"
 Changelog = "https://github.com/qdeli187/mkdocs-excalidraw/releases"
 
-[tool.poetry.plugins."mkdocs.plugins"]
+[project.entry-points."mkdocs.plugins"]
 excalidraw = "mkdocs_excalidraw.plugin:ExcalidrawPlugin"
 
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.6",
+    "mkdocs-glightbox>=0.5.2",
+    "mkdocs-include-markdown-plugin>=7.2.2",
+]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+]
 
-[tool.poetry.group.docs.dependencies]
-mkdocs = "^1.6.1"
-mkdocs-material = "^9.7.6"
-mkdocs-glightbox = "^0.5.2"
-mkdocs-include-markdown-plugin = "^7.2.2"
-
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^9.0.3"
-pytest-cov = "^7.1.0"
+[tool.hatch.build.targets.wheel]
+packages = ["mkdocs_excalidraw"]
+include = [
+    "/mkdocs_excalidraw/assets/excalidraw-renderer.bundle.js",
+]
 
