@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.6.2](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.1...v0.6.2) (2026-07-27)
+
+
+### Bug Fixes
+
+* **gha dependencies:** bump googleapis/release-please-action from 4 to 5 ([#61](https://github.com/qdeli187/mkdocs-excalidraw/issues/61)) ([7db0113](https://github.com/qdeli187/mkdocs-excalidraw/commit/7db0113f45d8a8349ae67d76e6b0b15b6066fb17))
+* **gha dependencies:** bump the github-actions group across 1 directory with 2 updates ([#70](https://github.com/qdeli187/mkdocs-excalidraw/issues/70)) ([7c54e1e](https://github.com/qdeli187/mkdocs-excalidraw/commit/7c54e1e3177ee9785a4e13030e7d65d7bd556a29))
+* **js dependencies:** bump the javascript-packages group across 1 directory with 3 updates ([#69](https://github.com/qdeli187/mkdocs-excalidraw/issues/69)) ([3c7d7e4](https://github.com/qdeli187/mkdocs-excalidraw/commit/3c7d7e477517bd9e648103d29ea0b3811fb65563))
+* **python dependencies:** bump the python-packages group across 1 directory with 4 updates ([#71](https://github.com/qdeli187/mkdocs-excalidraw/issues/71)) ([2ab0ee8](https://github.com/qdeli187/mkdocs-excalidraw/commit/2ab0ee809decf85183692428e5c8dfb183958a13))
+
 ## [0.6.1](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.0...v0.6.1) (2026-04-25)
 
 
