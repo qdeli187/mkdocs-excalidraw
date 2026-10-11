@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.6.3](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.2...v0.6.3) (2026-10-11)
+
+
+### Bug Fixes
+
+* **gha dependencies:** bump actions/setup-python ([e19bfcb](https://github.com/qdeli187/mkdocs-excalidraw/commit/e19bfcbfddda25224aec2f4d21ae1a86fc481b60))
+* **gha dependencies:** bump actions/setup-python from 6 to 7 in the github-actions group ([#73](https://github.com/qdeli187/mkdocs-excalidraw/issues/73)) ([e19bfcb](https://github.com/qdeli187/mkdocs-excalidraw/commit/e19bfcbfddda25224aec2f4d21ae1a86fc481b60))
+* **js dependencies:** bump the javascript-packages group across 1 directory with 2 updates ([#75](https://github.com/qdeli187/mkdocs-excalidraw/issues/75)) ([6faecbf](https://github.com/qdeli187/mkdocs-excalidraw/commit/6faecbf42124b2217a3314da9cd9bc8869aa6fb8))
+
 ## [0.6.2](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.1...v0.6.2) (2026-07-27)
 
 
