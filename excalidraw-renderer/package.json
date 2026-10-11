@@ -14,9 +14,9 @@
   "type": "commonjs",
   "devDependencies": {
     "@excalidraw/excalidraw": "^0.18.1",
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.2"
   },
   "dependencies": {
-    "uuid": "^14.0.1"
+    "uuid": "^14.0.2"
   }
 }
