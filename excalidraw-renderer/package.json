@@ -17,6 +17,6 @@
     "esbuild": "^0.28.2"
   },
   "dependencies": {
-    "uuid": "^14.0.2"
+    "uuid": "^14.0.3"
   }
 }
