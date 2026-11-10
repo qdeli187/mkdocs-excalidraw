@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.6.4](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.3...v0.6.4) (2026-11-10)
+
+
+### Bug Fixes
+
+* **js dependencies:** bump uuid ([e300ca4](https://github.com/qdeli187/mkdocs-excalidraw/commit/e300ca49997a85494ea71de4fcd8134b0dc7be20))
+* **js dependencies:** bump uuid from 14.0.2 to 14.0.3 in /excalidraw-renderer in the javascript-packages group ([#77](https://github.com/qdeli187/mkdocs-excalidraw/issues/77)) ([e300ca4](https://github.com/qdeli187/mkdocs-excalidraw/commit/e300ca49997a85494ea71de4fcd8134b0dc7be20))
+* **python dependencies:** bump the python-packages group with 2 updates ([#78](https://github.com/qdeli187/mkdocs-excalidraw/issues/78)) ([b844851](https://github.com/qdeli187/mkdocs-excalidraw/commit/b844851e3ad40ac095c7d15c65fe8abc555018d2))
+
 ## [0.6.3](https://github.com/qdeli187/mkdocs-excalidraw/compare/v0.6.2...v0.6.3) (2026-10-11)
 
 
